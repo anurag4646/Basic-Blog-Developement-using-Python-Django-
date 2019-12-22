@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block body %}
+
+{% load static %} 
+
+<div class = "container my-3 " >
+
+ <div class="jumbotron">
+  <h3 class="display-4"> Welcome to Data Science World </h3>
+  <hr class="my-4">
+  <img src= "{% static 'images/banner.jpg' %}" alt="" class="img-thumbnail" length = 3500 width = 700 >
+  <hr class="my-4">
+  <p class="lead"> </p>
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+  </p>
+ </div>
+</div>
+
+
+<div class = 'container'>
+<div class="py-5 text-center">
+        <h2>Checkout our blog post</h2>
+        <p class="lead">Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data. Data science is related to data mining and big data.</p>
+</div>
+<div class="container my-3">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">Data Science</a>
+              </h3>
+              <p class="card-text mb-auto"> The bascic of data science </p>
+              <a href="/blog/{{post.slug}}">Continue reading</a>
+            </div>
+            {% comment %} <img src= "{% static 'images/basic.jpg' %}" alt="Responsive image" class="img-thumbnail"> {% endcomment %}
+            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="" img src= "{% static '/images/struct.png' %}" data-holder-rendered="true" style="width: 250px; height: 200px;">
+          </div>
+        </div>
+</div> 
+ 
+</div>
+<div class="container my-3">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3 class="mb-0">
+                <a class="text-dark" href="#">Data Science</a>
+              </h3>
+              <p class="card-text mb-auto"> The bascic of data science </p>
+              <a href="/blog/{{post.slug}}">Continue reading</a>
+            </div>
+            {% comment %} <img src= "{% static 'images/basic.jpg' %}" alt="Responsive image" class="img-thumbnail"> {% endcomment %}
+            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="" img src= "{% static '/images/basic.jpg' %}" data-holder-rendered="true" style="width: 250px; height: 200px;">
+          </div>
+        </div>
+</div> 
+
+{% endblock body %}

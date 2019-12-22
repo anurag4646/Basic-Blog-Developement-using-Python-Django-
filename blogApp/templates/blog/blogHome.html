@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog {% endblock title %}
+
+{% block blogactive %} active {% endblock blogactive %}
+
+{% block body %}
+
+{% load static %}
+
+<h2> Data Science Blogs by Anurag </h2> 
+
+{% for post in allPosts %} 
+<div class="container my-3 ">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+     <div class="card-body d-flex flex-column align-items-start">
+       <img src= "{{post.img.url}}" alt=""  style="width: 700px; height: 300px;">
+       <strong class="d-inline-block mb-2 text-success"> {{post.author}} </strong>
+         <h3 class="mb-0">
+          <a class="text-dark" href="#"> {{post.title}} </a>
+         </h3>
+          <div class="mb-1 text-muted"> {{post.datetime}} </div>
+         m<p class="card-text mb-auto">{{post.content | truncatechars:500 }}</p>
+          <a href="/blog/{{post.slug}}">Continue reading</a>    
+       </div>
+     </div> 
+</div>
+{% endfor %} 
+{% endblock body %}
